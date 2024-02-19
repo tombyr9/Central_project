@@ -1,8 +1,6 @@
 import pygame
 import os
-wallet = 1000000
-bag = []
-shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "magasin_de_fleurs": 200000, "caserne_douvriers": 3000, "petite_centrale" : 8000}
+
 def open_the_shop(shop): #Fonction pour ouvrir le magasin
     print("Bienvenu dans la boutique. Voici les infrastructures disponibles.")
     for key in shop.keys():
@@ -26,30 +24,43 @@ def buy_in_the_shop(shop, bag, wallet): #Fonction pour acheter dans le shop
 def print_bag(bag): #Fonction qui affiche ce qu'il y a dans le sac de l'utilisateur.
     print("Vous possédez dans votre sac :", bag)
 
-open_the_shop(shop)
-see_the_wallet(wallet)
-buy_in_the_shop(shop, bag, wallet)
-print_bag(bag)
+wallet = 1000000
+bag = []
+shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "magasin_de_fleurs": 200000, "caserne_douvriers": 3000, "petite_centrale" : 8000}
 
-title_logo = "design/pixilart-drawing.png" #Variable avec le logo "CenTown"
-screen_title_background = "design/frame-1.gif" #Variable avec le le fond d'écran de l'usine
 open
 pygame.init() #Initialisation de la séance d'affichage
 
+crop = (640,455)
 screen = pygame.display.set_mode((640, 455)) #L'écran affiché est de la taille 640 x 455
 pygame.display.set_caption("CenTown") #Le titre de la fenêtre est "CenTown"
 
-title = pygame.image.load(title_logo) #L'image jpg du logo est mis dans un format spécial dans la variable pygame. C'est le format "surface", nécessaire pour que pygame l'utilise.
-background = pygame.image.load(screen_title_background).convert() #Même chose pour la fond d'écran
-nouvelle_taille = (640,455) #On initialise une nouvelle taille
-image_redimensionnee = pygame.transform.scale(background,nouvelle_taille) #On redimensionne le fond d'écran en fonction de cette nouvelle taille
+#Modifiable :
+title = pygame.image.load("design/pixilart-drawing.png") #L'image jpg du logo est mis dans un format spécial dans la variable pygame. C'est le format "surface", nécessaire pour que pygame l'utilise.
+image_rect = title.get_rect() #On met les coordonnées du titre dans une variable qu'on modifiera
 
-image_rect = title.get_rect() #On met les coordonnées du logo dans une variable qu'on modifiera
+background_1 = pygame.image.load("design/frame-1.gif") #On initialise trois variables background différentes qui vont être les frames de notre animation du menu.
+background_2 = pygame.image.load("design/frame-2.gif")
+background_3 = pygame.image.load("design/frame-3.gif")
+background_index = 0 #On initialise un compteur qui servira plus tard mais il est pas nécessaire.
+background_gif = [background_1, background_2, background_3]
+for i in range(2):
+    background_gif[i]= pygame.transform.scale(background_gif[i], crop)
+
+city_map = pygame.image.load("design/city_map.png") #On initialise une variable avec l'image de la ville.
+city_map_crop = pygame.transform.scale(city_map, crop) #On rogne cette image dde la ville aux dimensions 640, 455
+
+play_button = pygame.image.load("design/play_button.png") #On initialise une variable avec l'image du bouton.
+play_button_crop = pygame.transform.scale(play_button, (150,75)) #On rogne la taille de cette image du bouton.
+play_button_crop_rect = play_button_crop.get_rect() #On met la taille de la surface de ce bouton rogné, dans une variable
+play_button_crop_rect = play_button_crop_rect.move((230,300)) #On déplace la surface du bouton au centre bas de l'écran
 
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
+print_play_button = True #Même chose pour le bouton play
+print_city_map_crop = False #Mêeme chose pour la map de la ville
 
-run = False
+run = True
 while run: #Tant que le programme est en cours
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #Tant que la croix n'a pas été cliqué, le programme continue
@@ -59,14 +70,25 @@ while run: #Tant que le programme est en cours
                 image_rect.y += 2 #L'ordonnée de l'image est modifiée, elle ne peut pas sortir de l'image grâce à la condition du dessus.
             if event.key == pygame.K_UP and image_rect.y > -90: #Si la flèche du haut est saisia
                 image_rect.y -= 2 #Même chose que plus haut
-        elif event.type == pygame.KEYDOWN: #Si la touche entrée est saisie, on arrête l'affichage du titre
-            if event.key == pygame.K_RETURN:
-                print_title = False
+        if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
+            if play_button_crop_rect.collidepoint(event.pos):
+                print_play_button = False
+                print_city_map_crop = True
+
 
         if print_background == True: #tant qu'on met la variable à Vrai, on affiche le fond d'écran
-            screen.blit(image_redimensionnee,(0,0))
+            if background_index >2: #Une suite d'instructions qui font en sorte que les éléments du décor s'affichent avec une certaine latence.
+                background_index = 0
+            if background_index <=2:
+                screen.blit(background_gif[int(background_index)],(0,0))
+                background_index = background_index+0.01 #Plus la valeur additionnée sera basse, plus la transition sera lente.
+
+        if print_city_map_crop == True:
+            screen.blit(city_map_crop,(0,0))
         if print_title == True: #Tant qu'on met la variable à Vrai, on affiche le titre
             screen.blit(title,(-20, image_rect.y))
+        if print_play_button == True:
+            screen.blit(play_button_crop,(230,300))
 
         pygame.display.update() #Mise à jour continue du programme
 
