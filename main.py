@@ -55,16 +55,35 @@ play_button_crop = pygame.transform.scale(play_button, (150,75)) #On rogne la ta
 play_button_crop_rect = play_button_crop.get_rect() #On met la taille de la surface de ce bouton rogné, dans une variable
 play_button_crop_rect = play_button_crop_rect.move((230,300)) #On déplace la surface du bouton au centre bas de l'écran
 
+shop_image = pygame.image.load("design/shop_image.png")
+shop_image_crop = pygame.transform.scale(shop_image, (200,220))
+
+shop_button = pygame.image.load("design/shop_button.png")
+shop_button_crop = pygame.transform.scale(shop_button, (100, 40))
+shop_button_crop_rect = shop_button_crop.get_rect()
+shop_button_crop_rect = shop_button_crop_rect.move((510,410))
+
+wall_indoor_shop = pygame.image.load("design/wall_shop.jpg")
+wall_indoor_shop_crop = pygame.transform.scale(wall_indoor_shop,(640, 455))
+
+
+
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
 print_play_button = True #Même chose pour le bouton play
 print_city_map_crop = False #Mêeme chose pour la map de la ville
+print_shop = False
+print_indoor_shop = False
+
+police = pygame.font.SysFont(None, 48)
+texte = "Bonjour, Pygame!"
 
 run = True
 while run: #Tant que le programme est en cours
         for event in pygame.event.get():
             if event.type == pygame.QUIT: #Tant que la croix n'a pas été cliqué, le programme continue
                 run = False
+        #Instructions  qui s'éxecute après avoir touché à bouton
         if event.type == pygame.KEYDOWN: #Si la flèche du bas est saisie
             if event.key == pygame.K_DOWN and image_rect.y < 170:
                 image_rect.y += 2 #L'ordonnée de l'image est modifiée, elle ne peut pas sortir de l'image grâce à la condition du dessus.
@@ -73,9 +92,12 @@ while run: #Tant que le programme est en cours
         if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
             if play_button_crop_rect.collidepoint(event.pos):
                 print_play_button = False
+                print_title = False
                 print_city_map_crop = True
-
-
+                print_shop = True
+            if shop_button_crop_rect.collidepoint(event.pos):
+                print_indoor_shop = True
+        #Instructions pour pour l'affichage d'une image
         if print_background == True: #tant qu'on met la variable à Vrai, on affiche le fond d'écran
             if background_index >2: #Une suite d'instructions qui font en sorte que les éléments du décor s'affichent avec une certaine latence.
                 background_index = 0
@@ -85,12 +107,18 @@ while run: #Tant que le programme est en cours
 
         if print_city_map_crop == True:
             screen.blit(city_map_crop,(0,0))
+        if print_shop == True:
+            screen.blit(shop_image_crop, (460, 230))
+            screen.blit(shop_button_crop, (510,410))
         if print_title == True: #Tant qu'on met la variable à Vrai, on affiche le titre
             screen.blit(title,(-20, image_rect.y))
         if print_play_button == True:
             screen.blit(play_button_crop,(230,300))
-
+        if print_indoor_shop == True:
+            screen.blit(wall_indoor_shop_crop,(0,0))
         pygame.display.update() #Mise à jour continue du programme
+
+
 
 pygame.quit()
 quit()
