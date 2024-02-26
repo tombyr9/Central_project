@@ -57,6 +57,8 @@ play_button_crop_rect = play_button_crop_rect.move((230,300)) #On déplace la su
 
 shop_image = pygame.image.load("design/shop_image.png")
 shop_image_crop = pygame.transform.scale(shop_image, (200,220))
+shop_image_crop_rect = shop_image_crop.get_rect()
+shop_image_crop_rect = shop_image_crop_rect.move((460,230))
 
 shop_button = pygame.image.load("design/shop_button.png")
 shop_button_crop = pygame.transform.scale(shop_button, (100, 40))
@@ -66,6 +68,11 @@ shop_button_crop_rect = shop_button_crop_rect.move((510,410))
 wall_indoor_shop = pygame.image.load("design/wall_shop.jpg")
 wall_indoor_shop_crop = pygame.transform.scale(wall_indoor_shop,(640, 455))
 
+nuclear_central = pygame.image.load("design/nuclear_central.png")
+nuclear_central_crop = pygame.transform.scale(nuclear_central, (230,150))
+
+nuclear_central_button = pygame.image.load("design/Central_button.png")
+nuclear_central_button_crop = pygame.transform.scale(nuclear_central_button, (100,75))
 
 
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
@@ -74,6 +81,8 @@ print_play_button = True #Même chose pour le bouton play
 print_city_map_crop = False #Mêeme chose pour la map de la ville
 print_shop = False
 print_indoor_shop = False
+print_nuclear_central_shop = False
+print_nuclear_central_logo = False
 
 police = pygame.font.SysFont(None, 48)
 texte = "Bonjour, Pygame!"
@@ -95,8 +104,10 @@ while run: #Tant que le programme est en cours
                 print_title = False
                 print_city_map_crop = True
                 print_shop = True
-            if shop_button_crop_rect.collidepoint(event.pos):
+            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True):
                 print_indoor_shop = True
+                print_nuclear_central_shop = True
+                print_nuclear_central_logo = True
         #Instructions pour pour l'affichage d'une image
         if print_background == True: #tant qu'on met la variable à Vrai, on affiche le fond d'écran
             if background_index >2: #Une suite d'instructions qui font en sorte que les éléments du décor s'affichent avec une certaine latence.
@@ -116,9 +127,14 @@ while run: #Tant que le programme est en cours
             screen.blit(play_button_crop,(230,300))
         if print_indoor_shop == True:
             screen.blit(wall_indoor_shop_crop,(0,0))
+        if print_nuclear_central_shop == True:
+            screen.blit(nuclear_central_crop,(0,70))
+        if print_nuclear_central_logo == True:
+            screen.blit(nuclear_central_button_crop,(65,190))
         pygame.display.update() #Mise à jour continue du programme
 
 
 
 pygame.quit()
 quit()
+
