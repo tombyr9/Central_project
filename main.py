@@ -3,7 +3,7 @@ import os
 from function import *
 
 
-wallet = 1000000
+m = 1000000
 bag = []
 shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "magasin_de_fleurs": 200000, "caserne_douvriers": 3000, "petite_centrale" : 8000}
 
@@ -53,6 +53,10 @@ nuclear_central_crop = pygame.transform.scale(nuclear_central, (230,150))
 nuclear_central_button = pygame.image.load("design/Central_button.png")
 nuclear_central_button_crop = pygame.transform.scale(nuclear_central_button, (100,75))
 
+return_button = pygame.image.load("design/return_button.png")
+return_button_crop = pygame.transform.scale(return_button, (80, 80))
+return_button_crop_rect = shop_button_crop.get_rect()
+return_button_crop_rect = return_button_crop_rect.move((20,370))
 
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
@@ -62,6 +66,7 @@ print_shop = False
 print_indoor_shop = False
 print_nuclear_central_shop = False
 print_nuclear_central_logo = False
+print_return_button = False
 
 police = pygame.font.SysFont(None, 48)
 texte = "Bonjour, Pygame!"
@@ -77,23 +82,39 @@ while run: #Tant que le programme est en cours
                 image_rect.y += 2 #L'ordonnée de l'image est modifiée, elle ne peut pas sortir de l'image grâce à la condition du dessus.
             if event.key == pygame.K_UP and image_rect.y > -90: #Si la flèche du haut est saisia
                 image_rect.y -= 2 #Même chose que plus haut
+
+        #Instruction d'appuyer sur un boutton
         if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
             if play_button_crop_rect.collidepoint(event.pos):
                 print_play_button = False
                 print_title = False
                 print_city_map_crop = True
                 print_shop = True
-            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True):
+            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop, l'ensemble du shop s'affiche
                 print_indoor_shop = True
                 print_nuclear_central_shop = True
                 print_nuclear_central_logo = True
+                print_return_button = True
+            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
+                print_indoor_shop = False
+                print_nuclear_central_shop = False
+                print_nuclear_central_logo = False
+                print_return_button = False
+            if return_button_crop_rect.collidepoint(event.pos) and(print_indoor_shop == True):
+                print_city_map_crop=False
+                print_title = True
+                print_play_button = True
+                print_shop = False
+
+
+
         #Instructions pour pour l'affichage d'une image
         if print_background == True: #tant qu'on met la variable à Vrai, on affiche le fond d'écran
             if background_index >2: #Une suite d'instructions qui font en sorte que les éléments du décor s'affichent avec une certaine latence.
                 background_index = 0
             if background_index <=2:
                 screen.blit(background_gif[int(background_index)],(0,0))
-                background_index = background_index+0.01 #Plus la valeur additionnée sera basse, plus la transition sera lente.
+                background_index = background_index+0.015 #Plus la valeur additionnée sera basse, plus la transition sera lente.
 
         if print_city_map_crop == True:
             screen.blit(city_map_crop,(0,0))
@@ -104,12 +125,14 @@ while run: #Tant que le programme est en cours
             screen.blit(title,(-20, image_rect.y))
         if print_play_button == True:
             screen.blit(play_button_crop,(230,300))
-        if print_indoor_shop == True:
+        if print_indoor_shop == True    :
             screen.blit(wall_indoor_shop_crop,(0,0))
         if print_nuclear_central_shop == True:
             screen.blit(nuclear_central_crop,(0,70))
         if print_nuclear_central_logo == True:
             screen.blit(nuclear_central_button_crop,(65,190))
+        if print_return_button == True:
+            screen.blit(return_button_crop,(20,350))
         pygame.display.update() #Mise à jour continue du programme
 
 
