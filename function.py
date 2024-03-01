@@ -1,3 +1,14 @@
+print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
+print_background = True #Même chose pour le fond d'écran.
+print_play_button = True #Même chose pour le bouton play
+print_city_map_crop = False #Mêeme chose pour la map de la ville
+print_shop = False
+print_indoor_shop = False
+print_nuclear_central_shop = False
+print_nuclear_central_logo = False
+print_return_button = False
+print_child = False
+
 def open_the_shop(shop): #Fonction pour ouvrir le magasin
     print("Bienvenu dans la boutique. Voici les infrastructures disponibles.")
     for key in shop.keys():
@@ -28,3 +39,30 @@ def gain(P,M,G,I):
 def production(P,M,G,I):
     Z=P*2+M*5+G*12.5+I*50
     return Z
+
+def open_town():
+    print_play_button = False
+    print_title = False
+    print_city_map_crop = True
+    print_shop = True
+    print_child = True
+    return print_play_button,print_title,print_city_map_crop,print_shop,print_child
+
+def close_town():
+    print_city_map_crop = False
+    print_shop = False
+    print_child = False
+    return print_city_map_crop,print_shop,print_child
+
+def open_shop():
+    print_indoor_shop = True
+    print_nuclear_central_shop = True
+    print_nuclear_central_logo = True
+    print_return_button = True
+    return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button
+def close_shop():
+    print_indoor_shop = False
+    print_nuclear_central_shop = False
+    print_nuclear_central_logo = False
+    print_return_button = False
+    return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button

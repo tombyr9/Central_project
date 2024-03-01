@@ -58,6 +58,9 @@ return_button_crop = pygame.transform.scale(return_button, (80, 80))
 return_button_crop_rect = shop_button_crop.get_rect()
 return_button_crop_rect = return_button_crop_rect.move((20,370))
 
+child = pygame.image.load("design/child.png")
+child_crop = pygame.transform.scale(child, (60,75))
+
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
 print_play_button = True #Même chose pour le bouton play
@@ -67,6 +70,8 @@ print_indoor_shop = False
 print_nuclear_central_shop = False
 print_nuclear_central_logo = False
 print_return_button = False
+print_child = False
+
 
 police = pygame.font.SysFont(None, 48)
 texte = "Bonjour, Pygame!"
@@ -84,28 +89,23 @@ while run: #Tant que le programme est en cours
                 image_rect.y -= 2 #Même chose que plus haut
 
         #Instruction d'appuyer sur un boutton
-        if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
-            if play_button_crop_rect.collidepoint(event.pos):
-                print_play_button = False
-                print_title = False
-                print_city_map_crop = True
-                print_shop = True
-            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop, l'ensemble du shop s'affiche
-                print_indoor_shop = True
-                print_nuclear_central_shop = True
-                print_nuclear_central_logo = True
-                print_return_button = True
-            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
-                print_indoor_shop = False
-                print_nuclear_central_shop = False
-                print_nuclear_central_logo = False
-                print_return_button = False
-            if return_button_crop_rect.collidepoint(event.pos) and(print_indoor_shop == True):
-                print_city_map_crop=False
-                print_title = True
-                print_play_button = True
-                print_shop = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
 
+            if play_button_crop_rect.collidepoint(event.pos):#Lorsqu'on appuie sur le bouton entrée
+                hub = open_town() #J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
+                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub #Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "hub"
+
+            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop
+                hub = close_town()
+                print_city_map_crop, print_shop, print_child = hub
+                shop = open_shop()#J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire à la boutique
+                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = shop#Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "shop".
+
+            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
+                hub = close_shop()
+                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = hub
+                hub = open_town()
+                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub
 
 
         #Instructions pour pour l'affichage d'une image
@@ -133,6 +133,8 @@ while run: #Tant que le programme est en cours
             screen.blit(nuclear_central_button_crop,(65,190))
         if print_return_button == True:
             screen.blit(return_button_crop,(20,350))
+        if print_child == True:
+            screen.blit(child_crop,(20,40))
         pygame.display.update() #Mise à jour continue du programme
 
 
