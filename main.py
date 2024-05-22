@@ -1,4 +1,6 @@
 import pygame
+import random
+import sys
 import os
 from function import *
 
@@ -10,6 +12,81 @@ shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "m
 open
 pygame.init() #Initialisation de la séance d'affichage
 
+# Définition de la couleur blanche
+blanc = (255, 255, 255) #Initialisation des couleurs blanches et noires
+noir = (0, 0, 0)
+#Tout ce qui a en dessous sont des initialisation du jeu de Tom
+#################################################################################################
+#Définition des deux classes utiles pour le jeu vidéo de Tom mini_game_thief
+class character:
+    def __init__(self):
+        self.speed = 2
+        self.life = 3
+        self.y = 230
+        self.x = 300
+        self.taille = (25,25)
+        self.position = (self.x, self.y)
+
+class text:
+    def __init__(self):
+        self.speed = 2
+        self.life = 3
+        self.y = 270
+        self.x = 300
+        self.taille = (25,25)
+        self.position = (self.x, self.y)
+#Permet d'utiliser les classes et ses composantes du mini jeu de Tom mini_game_thief
+thief = character()
+text = text()
+#Génère les images utiles au jeu vidéo de Tom, mini_game_thief
+thief_image_0 = pygame.image.load(".venv/art/character_0.png")
+thief_image_1 = pygame.image.load(".venv/art/character_1.png")
+#Une liste qui sert à l'animation du personnage du jeu de Tom, mini_game_thied
+thief_frames = [thief_image_0, thief_image_1]
+#Un index qui sert à l'animation du personnage du jeu de Tom, mini_game_thied
+index = 0
+#Une liste de direction qui sert à l'animation du personnage du jeu de Tom, mini_game_thief
+direction = ["up", "down", "left", "right"]
+#Une police d'écriture de direction qui sert au texte du jeu de Tom, mini_game_thief
+font = pygame.font.Font(None, 36)  # Utilise la police par défaut avec une taille de 36 points
+#Plusieurs fonctions qui servent au jeu de Tom, mini_game_thief
+def thief_animation(thief_frames, thief , index):
+    current_frame = pygame.transform.scale(thief_frames[int(index)], thief.taille)
+    return current_frame
+
+def thief_walk(current_frame, thief):
+    screen.blit(current_frame, thief.position)
+
+#Faire une foncton qui fait avancer le bonhomme dans une direction aléatoire
+def change_position(thief):
+    if choice == "up" and 0<thief.y<455 and 0<thief.x<640:
+        thief.y += 6
+    elif choice == "down" and 0<thief.y<455 and 0<thief.x<640:
+        thief.y -= 6
+    elif choice == "left" and 0<thief.x<640 and 0<thief.y<455:
+        thief.x -= 6
+    elif choice == "right" and 0<thief.x<640 and 0<thief.y<455:
+        thief.x += 6
+    print(choice)
+
+play_button = pygame.image.load("design/play_button.png") #On initialise une variable avec l'image du bouton.
+play_button_crop = pygame.transform.scale(play_button, (150,75)) #On rogne la taille de cette image du bouton.
+
+# Création d'une surface de texte
+texte_before_game_1 = font.render("Le voleur est sur le point de s'échapper !", True, noir)
+texte_before_game_2 = font.render("Clique dessus avant qu'il ne s'enfuit.", True, noir)
+texte_before_game_3 = font.render("Prêt ?", True, noir)
+texte_restart = font.render("On recommence ?", True, noir)
+texte_win = font.render("Bravo ! Tu l'as attrapé !", True, noir)
+texte_thief_exit = font.render("Il s'est echappé !", True, noir)
+# Faire apparaître du texte
+touch = False
+
+start = False
+before_start = True
+after_start = False
+##################################################################
+#Tout ce qui a au dessus sont des initialisation du jeu de Tom
 crop = (640,455)
 screen = pygame.display.set_mode((640, 455)) #L'écran affiché est de la taille 640 x 455
 pygame.display.set_caption("CenTown") #Le titre de la fenêtre est "CenTown"
@@ -58,6 +135,11 @@ return_button_crop = pygame.transform.scale(return_button, (80, 80))
 return_button_crop_rect = shop_button_crop.get_rect()
 return_button_crop_rect = return_button_crop_rect.move((20,370))
 
+child = pygame.image.load("design/child.png")
+child_crop = pygame.transform.scale(child, (60,75))
+child_crop_rect = child_crop.get_rect()
+child_crop_rect = child_crop_rect.move((20,40))
+
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
 print_play_button = True #Même chose pour le bouton play
@@ -67,6 +149,8 @@ print_indoor_shop = False
 print_nuclear_central_shop = False
 print_nuclear_central_logo = False
 print_return_button = False
+print_child = False
+mini_game_thief = False
 
 police = pygame.font.SysFont(None, 48)
 texte = "Bonjour, Pygame!"
@@ -84,28 +168,26 @@ while run: #Tant que le programme est en cours
                 image_rect.y -= 2 #Même chose que plus haut
 
         #Instruction d'appuyer sur un boutton
-        if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
-            if play_button_crop_rect.collidepoint(event.pos):
-                print_play_button = False
-                print_title = False
-                print_city_map_crop = True
-                print_shop = True
-            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop, l'ensemble du shop s'affiche
-                print_indoor_shop = True
-                print_nuclear_central_shop = True
-                print_nuclear_central_logo = True
-                print_return_button = True
-            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
-                print_indoor_shop = False
-                print_nuclear_central_shop = False
-                print_nuclear_central_logo = False
-                print_return_button = False
-            if return_button_crop_rect.collidepoint(event.pos) and(print_indoor_shop == True):
-                print_city_map_crop=False
-                print_title = True
-                print_play_button = True
-                print_shop = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
 
+            if play_button_crop_rect.collidepoint(event.pos)and (mini_game_thief==False):#Lorsqu'on appuie sur le bouton entrée
+                hub = open_town() #J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
+                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub #Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "hub"
+
+            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True) and (mini_game_thief==False): #Lorsqu'on appuie sur le bouton shop
+                hub = close_town()
+                print_city_map_crop, print_shop, print_child = hub
+                shop = open_shop()#J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire à la boutique
+                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = shop#Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "shop".
+
+            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True) and (mini_game_thief==False): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
+                hub = close_shop()
+                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = hub
+                hub = open_town()
+                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub
+
+            if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
+                mini_game_thief = True
 
 
         #Instructions pour pour l'affichage d'une image
@@ -133,7 +215,75 @@ while run: #Tant que le programme est en cours
             screen.blit(nuclear_central_button_crop,(65,190))
         if print_return_button == True:
             screen.blit(return_button_crop,(20,350))
+        if print_child == True:
+            screen.blit(child_crop,(20,40))
         pygame.display.update() #Mise à jour continue du programme
+
+        if mini_game_thief == True:
+            print_child = False
+            print_shop = False
+            print_background = False
+            print_city_map_crop = False
+            screen.fill(blanc)
+            # L'animation du bonhomme
+            index += 0.00001  # Incrémentez l'index
+            index = index + 0.01
+            if (index >= 2):
+                index = 0
+            if before_start == True:
+                touch = False
+                screen.blit(texte_before_game_1, (100, 90))
+                screen.blit(texte_before_game_2, (110, 150))
+                screen.blit(texte_before_game_3, (200, 360))
+                screen.blit(play_button_crop, (300, 330))
+                play_button_crop_rect = play_button_crop.get_rect()  # On met la taille de la surface de ce bouton rogné, dans une variable
+                play_button_crop_rect = play_button_crop_rect.move((300, 330))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if play_button_crop_rect.collidepoint(event.pos):  # Lorsqu'on appuie sur le bouton entrée
+                        before_start = False
+                        start = True
+                thief.x, thief.y = 300, 230
+                screen.blit(thief_animation(thief_frames, thief, index), (thief.x, thief.y))
+
+            if start == True:
+                # Un choix aléatoire est fait
+                choice = random.choice(direction)
+
+                if (thief.y <= 0) or (thief.y >= 455) or (640 <= thief.x) or (thief.x <= 0):
+                    touch = True
+                if touch == True:
+                    screen.blit(texte_thief_exit, text.position)
+                    screen.blit(texte_restart, (295, 300))
+                    screen.blit(play_button_crop, (325, 340))
+                    play_button_crop_rect = play_button_crop.get_rect()  # On met la taille de la surface de ce bouton rogné, dans une variable
+                    play_button_crop_rect = play_button_crop_rect.move((325, 340))
+                    if event.type == pygame.MOUSEBUTTONDOWN and touch == True:
+                        if play_button_crop_rect.collidepoint(event.pos):  # Lorsqu'on appuie sur le bouton entrée
+                            before_start = True
+                            start = False
+                # Lorsque le choix est fait thief.x et thief.y sont modifiés
+                change_position(thief)
+                print(thief.x, thief.y)
+                # On met la surface du voleur dans une variable rect (obligatoire pour la collision future avec le curseur)
+                current_frame_rect = thief_animation(thief_frames, thief,
+                                                     index).get_rect()  # On met la taille de la surface de ce bouton rogné, dans une variable
+                # On veut que la surface se déplace aux mêmes positions que le voleur
+                current_frame_rect = current_frame_rect.move(thief.x, thief.y)
+                if event.type == pygame.MOUSEBUTTONDOWN and touch == False:
+                    if current_frame_rect.collidepoint(event.pos):  # Lorsqu'on appuie sur le bouton entrée
+                        before_start = False
+                        start = False
+                        after_start = True
+                # Actualise l'affichage du voleur avec les nouvelles coordonnées et sa bonne frame d'animation
+                screen.blit(thief_animation(thief_frames, thief, index), (thief.x, thief.y))
+            if after_start == True:
+                screen.blit(texte_win, (260, 300))
+            # Rafraîchir l'affichage
+            pygame.display.flip()
+
+# Remplir l'écran avec la couleur blanche
+
+# Boucle principale du jeu
 
 
 
