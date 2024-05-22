@@ -1,0 +1,654 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"edce05e2-d3c4-49e5-89e0-cf79955592d7\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/function.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/function.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2cRW3Q0NGM70iKhtSg1yjXsGMgG\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Python.Main.executor\": \"Run\",\r\n    \"Python.function.executor\": \"Run\",\r\n    \"Python.main.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"return__button\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"edce05e2-d3c4-49e5-89e0-cf79955592d7\" name=\"Changes\" comment=\"\" />\r\n      <created>1708074672025</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1708074672025</updated>\r\n      <workItem from=\"1708074678526\" duration=\"3718000\" />\r\n      <workItem from=\"1708087823300\" duration=\"13525000\" />\r\n      <workItem from=\"1708285219633\" duration=\"632000\" />\r\n      <workItem from=\"1708328874394\" duration=\"6232000\" />\r\n      <workItem from=\"1708450964155\" duration=\"3496000\" />\r\n      <workItem from=\"1708939643458\" duration=\"2073000\" />\r\n      <workItem from=\"1709038054131\" duration=\"81000\" />\r\n      <workItem from=\"1709131260502\" duration=\"2405000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/Central_project$function.coverage\" NAME=\"function Coverage Results\" MODIFIED=\"1708942972875\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/Central_project$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1709138384598\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n    <SUITE FILE_PATH=\"coverage/Central_project$Main.coverage\" NAME=\"Main Coverage Results\" MODIFIED=\"1708074758671\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0138351e8535c00b9af46b35b8ec4491116b28d3)
++++ b/.idea/workspace.xml	(date 1716359524423)
+@@ -5,6 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="edce05e2-d3c4-49e5-89e0-cf79955592d7" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/jeux" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/jeux1.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+@@ -23,6 +26,20 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;eliasleboss&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="selectedUrlAndAccountId">
++      <UrlAndAccount>
++        <option name="accountId" value="08dcf23f-8e56-4d79-9b52-02cfc3fb5887" />
++        <option name="url" value="https://github.com/tombyr9/Central_project.git" />
++      </UrlAndAccount>
++    </option>
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 7
+@@ -33,23 +50,222 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Python.Main.executor": "Run",
+-    "Python.function.executor": "Run",
+-    "Python.main.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "return__button",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
++    &quot;Python.main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/elias/Downloads/GitHub/Projet-python/Central_project&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
++  <component name="RunManager">
++    <configuration name="jeux1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9 (pythonProject2)" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jeux1.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="jeux1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9 (pythonProject2)" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jeux1.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
++      <module name="Central_project" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.9" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <list>
++      <item itemvalue="Python.main" />
++      <item itemvalue="Python.main (1)" />
++      <item itemvalue="Python.jeux1" />
++      <item itemvalue="Python.main (2)" />
++    </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.jeux1" />
++        <item itemvalue="Python.main (2)" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -70,18 +286,44 @@
+       <workItem from="1708285219633" duration="632000" />
+       <workItem from="1708328874394" duration="6232000" />
+       <workItem from="1708450964155" duration="3496000" />
+-      <workItem from="1708939643458" duration="2073000" />
+-      <workItem from="1709038054131" duration="81000" />
+-      <workItem from="1709131260502" duration="2405000" />
++      <workItem from="1710487700937" duration="3512000" />
++      <workItem from="1710500640369" duration="5779000" />
++      <workItem from="1710515008673" duration="5835000" />
++      <workItem from="1710756222724" duration="15267000" />
++      <workItem from="1711639839756" duration="49000" />
++      <workItem from="1711696894580" duration="2892000" />
++      <workItem from="1712665786780" duration="1461000" />
++      <workItem from="1714406367876" duration="6000" />
++      <workItem from="1714406473553" duration="2499000" />
++      <workItem from="1714739662583" duration="1204000" />
++      <workItem from="1715095877109" duration="2516000" />
++      <workItem from="1716358478232" duration="812000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/Central_project$function.coverage" NAME="function Coverage Results" MODIFIED="1708942972875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+-    <SUITE FILE_PATH="coverage/Central_project$main.coverage" NAME="main Coverage Results" MODIFIED="1709138384598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$jeux1.coverage" NAME="jeux1 Coverage Results" MODIFIED="1710505168398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$trad.coverage" NAME="trad Coverage Results" MODIFIED="1714740243916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$c.coverage" NAME="c Coverage Results" MODIFIED="1714740248264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$jeux1bis.coverage" NAME="jeux1bis Coverage Results" MODIFIED="1715096021994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1710505143324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/Central_project$Main.coverage" NAME="Main Coverage Results" MODIFIED="1708074758671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$main.coverage" NAME="main Coverage Results" MODIFIED="1714739722600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1710501649353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/Central_project$function.coverage" NAME="function Coverage Results" MODIFIED="1710520610441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: jeux1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/jeux1.py b/jeux1.py
+new file mode 100644
+--- /dev/null	(date 1710501664487)
++++ b/jeux1.py	(date 1710501664487)
+@@ -0,0 +1,93 @@
++import pygame
++import random
++import sys
++
++# Initialisation de Pygame
++pygame.init()
++
++# Définition de la taille de la fenêtre
++WINDOW_WIDTH = 800
++WINDOW_HEIGHT = 600
++WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
++WINDOW_TITLE = "Jeu des carrés"
++BACKGROUND_COLOR = (255, 255, 255)  # Blanc
++
++# Définition des couleurs
++BLACK = (0, 0, 0)
++RED = (255, 0, 0)
++
++# Définition des paramètres des carrés
++SQUARE_SIZE = 50
++SQUARE_COLOR = BLACK
++
++# Position du score
++SCORE_POSITION = (WINDOW_WIDTH - 150, 20)
++SCORE_FONT = pygame.font.Font(None, 36)
++
++# Durée de vie des carrés (en millisecondes)
++SQUARE_DURATION = 5000  # 5 secondes
++
++# Temps entre chaque apparition de carré (en millisecondes)
++SQUARE_APPEAR_INTERVAL = 1000  # 1 seconde
++
++# Création de la fenêtre
++window = pygame.display.set_mode(WINDOW_SIZE)
++pygame.display.set_caption(WINDOW_TITLE)
++
++clock = pygame.time.Clock()
++
++# Liste des carrés actuellement affichés à l'écran
++squares = []
++
++# Score initial
++score = 0
++
++# Fonction pour générer un carré à une position aléatoire
++def generate_square():
++    x = random.randint(0, WINDOW_WIDTH - SQUARE_SIZE)
++    y = random.randint(0, WINDOW_HEIGHT - SQUARE_SIZE)
++    creation_time = pygame.time.get_ticks()  # Enregistrer le moment de la création
++    return (x, y, creation_time)
++
++# Boucle principale du jeu
++running = True
++while running:
++    window.fill(BACKGROUND_COLOR)
++
++    current_time = pygame.time.get_ticks()
++
++    # Génération d'un nouveau carré à chaque intervalle
++    # Génération d'un nouveau carré si le temps écoulé depuis la création du dernier carré dépasse l'intervalle
++    if not squares or current_time - squares[-1][2] > SQUARE_APPEAR_INTERVAL:
++        new_square = generate_square()
++        squares.append(new_square)
++
++    # Affichage et gestion des carrés
++    for square in squares[:]:  # Utilisation de la copie de la liste pour itérer
++        pygame.draw.rect(window, SQUARE_COLOR, pygame.Rect(square[0], square[1], SQUARE_SIZE, SQUARE_SIZE))
++        if current_time - square[2] >= SQUARE_DURATION:
++            squares.remove(square)  # Retirer le carré si sa durée est écoulée
++
++    # Affichage du score
++    score_text = SCORE_FONT.render(f"Score: {score}", True, BLACK)
++    window.blit(score_text, SCORE_POSITION)
++
++    # Gestion des événements
++    for event in pygame.event.get():
++        if event.type == pygame.QUIT:
++            running = False
++        elif event.type == pygame.MOUSEBUTTONDOWN:
++            # Vérifie si on a cliqué sur un carré
++            for square in squares[:]:  # Utilisation de la copie de la liste pour itérer
++                square_rect = pygame.Rect(square[0], square[1], SQUARE_SIZE, SQUARE_SIZE)
++                if square_rect.collidepoint(event.pos):
++                    squares.remove(square)
++                    score += 1
++
++    # Mise à jour de l'écran
++    pygame.display.flip()
++    clock.tick(30)
++
++# Quitter Pygame
++pygame.quit()
++sys.exit()
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nimport os\r\nfrom function import *\r\n\r\n\r\nm = 1000000\r\nbag = []\r\nshop = {\"parc_dattraction\" : 1000000, \"aire_de_jeu\" : 10000, \"statue\" : 1500, \"magasin_de_fleurs\": 200000, \"caserne_douvriers\": 3000, \"petite_centrale\" : 8000}\r\n\r\nopen\r\npygame.init() #Initialisation de la séance d'affichage\r\n\r\ncrop = (640,455)\r\nscreen = pygame.display.set_mode((640, 455)) #L'écran affiché est de la taille 640 x 455\r\npygame.display.set_caption(\"CenTown\") #Le titre de la fenêtre est \"CenTown\"\r\n\r\n#Modifiable :\r\ntitle = pygame.image.load(\"design/pixilart-drawing.png\") #L'image jpg du logo est mis dans un format spécial dans la variable pygame. C'est le format \"surface\", nécessaire pour que pygame l'utilise.\r\nimage_rect = title.get_rect() #On met les coordonnées du titre dans une variable qu'on modifiera\r\n\r\nbackground_1 = pygame.image.load(\"design/frame-1.gif\") #On initialise trois variables background différentes qui vont être les frames de notre animation du menu.\r\nbackground_2 = pygame.image.load(\"design/frame-2.gif\")\r\nbackground_3 = pygame.image.load(\"design/frame-3.gif\")\r\nbackground_index = 0 #On initialise un compteur qui servira plus tard mais il est pas nécessaire.\r\nbackground_gif = [background_1, background_2, background_3]\r\nfor i in range(2):\r\n    background_gif[i]= pygame.transform.scale(background_gif[i], crop)\r\n\r\ncity_map = pygame.image.load(\"design/city_map.png\") #On initialise une variable avec l'image de la ville.\r\ncity_map_crop = pygame.transform.scale(city_map, crop) #On rogne cette image dde la ville aux dimensions 640, 455\r\n\r\nplay_button = pygame.image.load(\"design/play_button.png\") #On initialise une variable avec l'image du bouton.\r\nplay_button_crop = pygame.transform.scale(play_button, (150,75)) #On rogne la taille de cette image du bouton.\r\nplay_button_crop_rect = play_button_crop.get_rect() #On met la taille de la surface de ce bouton rogné, dans une variable\r\nplay_button_crop_rect = play_button_crop_rect.move((230,300)) #On déplace la surface du bouton au centre bas de l'écran\r\n\r\nshop_image = pygame.image.load(\"design/shop_image.png\")\r\nshop_image_crop = pygame.transform.scale(shop_image, (200,220))\r\nshop_image_crop_rect = shop_image_crop.get_rect()\r\nshop_image_crop_rect = shop_image_crop_rect.move((460,230))\r\n\r\nshop_button = pygame.image.load(\"design/shop_button.png\")\r\nshop_button_crop = pygame.transform.scale(shop_button, (100, 40))\r\nshop_button_crop_rect = shop_button_crop.get_rect()\r\nshop_button_crop_rect = shop_button_crop_rect.move((510,410))\r\n\r\nwall_indoor_shop = pygame.image.load(\"design/wall_shop.jpg\")\r\nwall_indoor_shop_crop = pygame.transform.scale(wall_indoor_shop,(640, 455))\r\n\r\nnuclear_central = pygame.image.load(\"design/nuclear_central.png\")\r\nnuclear_central_crop = pygame.transform.scale(nuclear_central, (230,150))\r\n\r\nnuclear_central_button = pygame.image.load(\"design/Central_button.png\")\r\nnuclear_central_button_crop = pygame.transform.scale(nuclear_central_button, (100,75))\r\n\r\nreturn_button = pygame.image.load(\"design/return_button.png\")\r\nreturn_button_crop = pygame.transform.scale(return_button, (80, 80))\r\nreturn_button_crop_rect = shop_button_crop.get_rect()\r\nreturn_button_crop_rect = return_button_crop_rect.move((20,370))\r\n\r\nprint_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.\r\nprint_background = True #Même chose pour le fond d'écran.\r\nprint_play_button = True #Même chose pour le bouton play\r\nprint_city_map_crop = False #Mêeme chose pour la map de la ville\r\nprint_shop = False\r\nprint_indoor_shop = False\r\nprint_nuclear_central_shop = False\r\nprint_nuclear_central_logo = False\r\nprint_return_button = False\r\n\r\npolice = pygame.font.SysFont(None, 48)\r\ntexte = \"Bonjour, Pygame!\"\r\n\r\nrun = True\r\nwhile run: #Tant que le programme est en cours\r\n        for event in pygame.event.get():\r\n            if event.type == pygame.QUIT: #Tant que la croix n'a pas été cliqué, le programme continue\r\n                run = False\r\n        #Instructions  qui s'éxecute après avoir touché à bouton\r\n        if event.type == pygame.KEYDOWN: #Si la flèche du bas est saisie\r\n            if event.key == pygame.K_DOWN and image_rect.y < 170:\r\n                image_rect.y += 2 #L'ordonnée de l'image est modifiée, elle ne peut pas sortir de l'image grâce à la condition du dessus.\r\n            if event.key == pygame.K_UP and image_rect.y > -90: #Si la flèche du haut est saisia\r\n                image_rect.y -= 2 #Même chose que plus haut\r\n\r\n        #Instruction d'appuyer sur un boutton\r\n        if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît\r\n            if play_button_crop_rect.collidepoint(event.pos):\r\n                print_play_button = False\r\n                print_title = False\r\n                print_city_map_crop = True\r\n                print_shop = True\r\n            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop, l'ensemble du shop s'affiche\r\n                print_indoor_shop = True\r\n                print_nuclear_central_shop = True\r\n                print_nuclear_central_logo = True\r\n                print_return_button = True\r\n            if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.\r\n                print_indoor_shop = False\r\n                print_nuclear_central_shop = False\r\n                print_nuclear_central_logo = False\r\n                print_return_button = False\r\n            if return_button_crop_rect.collidepoint(event.pos) and(print_indoor_shop == True):\r\n                print_city_map_crop=False\r\n                print_title = True\r\n                print_play_button = True\r\n                print_shop = False\r\n\r\n\r\n\r\n        #Instructions pour pour l'affichage d'une image\r\n        if print_background == True: #tant qu'on met la variable à Vrai, on affiche le fond d'écran\r\n            if background_index >2: #Une suite d'instructions qui font en sorte que les éléments du décor s'affichent avec une certaine latence.\r\n                background_index = 0\r\n            if background_index <=2:\r\n                screen.blit(background_gif[int(background_index)],(0,0))\r\n                background_index = background_index+0.015 #Plus la valeur additionnée sera basse, plus la transition sera lente.\r\n\r\n        if print_city_map_crop == True:\r\n            screen.blit(city_map_crop,(0,0))\r\n        if print_shop == True:\r\n            screen.blit(shop_image_crop, (460, 230))\r\n            screen.blit(shop_button_crop, (510,410))\r\n        if print_title == True: #Tant qu'on met la variable à Vrai, on affiche le titre\r\n            screen.blit(title,(-20, image_rect.y))\r\n        if print_play_button == True:\r\n            screen.blit(play_button_crop,(230,300))\r\n        if print_indoor_shop == True    :\r\n            screen.blit(wall_indoor_shop_crop,(0,0))\r\n        if print_nuclear_central_shop == True:\r\n            screen.blit(nuclear_central_crop,(0,70))\r\n        if print_nuclear_central_logo == True:\r\n            screen.blit(nuclear_central_button_crop,(65,190))\r\n        if print_return_button == True:\r\n            screen.blit(return_button_crop,(20,350))\r\n        pygame.display.update() #Mise à jour continue du programme\r\n\r\n\r\n\r\npygame.quit()\r\nquit()\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision 0138351e8535c00b9af46b35b8ec4491116b28d3)
++++ b/main.py	(date 1710501824322)
+@@ -58,6 +58,11 @@
+ return_button_crop_rect = shop_button_crop.get_rect()
+ return_button_crop_rect = return_button_crop_rect.move((20,370))
+ 
++child = pygame.image.load("design/child.png")
++child_crop = pygame.transform.scale(child, (60,75))
++
++
++
+ print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
+ print_background = True #Même chose pour le fond d'écran.
+ print_play_button = True #Même chose pour le bouton play
+@@ -67,12 +72,18 @@
+ print_nuclear_central_shop = False
+ print_nuclear_central_logo = False
+ print_return_button = False
++print_child = False
++progres=True
+ 
+ police = pygame.font.SysFont(None, 48)
+ texte = "Bonjour, Pygame!"
+ 
++
+ run = True
+ while run: #Tant que le programme est en cours
++        z=production(1, 0, 0, 0)
++
++
+         for event in pygame.event.get():
+             if event.type == pygame.QUIT: #Tant que la croix n'a pas été cliqué, le programme continue
+                 run = False
+@@ -84,28 +95,23 @@
+                 image_rect.y -= 2 #Même chose que plus haut
+ 
+         #Instruction d'appuyer sur un boutton
+-        if event.type == pygame.MOUSEBUTTONDOWN: #Lorsqu'on appuie sur le bouton entrée, il disparaît
+-            if play_button_crop_rect.collidepoint(event.pos):
+-                print_play_button = False
+-                print_title = False
+-                print_city_map_crop = True
+-                print_shop = True
+-            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop, l'ensemble du shop s'affiche
+-                print_indoor_shop = True
+-                print_nuclear_central_shop = True
+-                print_nuclear_central_logo = True
+-                print_return_button = True
++        if event.type == pygame.MOUSEBUTTONDOWN:
++
++            if play_button_crop_rect.collidepoint(event.pos):#Lorsqu'on appuie sur le bouton entrée
++                hub = open_town() #J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
++                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub #Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "hub"
++
++            if (shop_button_crop_rect.collidepoint(event.pos) and print_city_map_crop ==True) or (shop_image_crop_rect.collidepoint(event.pos) and print_city_map_crop==True): #Lorsqu'on appuie sur le bouton shop
++                hub = close_town()
++                print_city_map_crop, print_shop, print_child = hub
++                shop = open_shop()#J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire à la boutique
++                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = shop#Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "shop".
++
+             if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
+-                print_indoor_shop = False
+-                print_nuclear_central_shop = False
+-                print_nuclear_central_logo = False
+-                print_return_button = False
+-            if return_button_crop_rect.collidepoint(event.pos) and(print_indoor_shop == True):
+-                print_city_map_crop=False
+-                print_title = True
+-                print_play_button = True
+-                print_shop = False
+-
++                hub = close_shop()
++                print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = hub
++                hub = open_town()
++                print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub
+ 
+ 
+         #Instructions pour pour l'affichage d'une image
+@@ -133,10 +139,52 @@
+             screen.blit(nuclear_central_button_crop,(65,190))
+         if print_return_button == True:
+             screen.blit(return_button_crop,(20,350))
++        if print_child == True:
++            screen.blit(child_crop,(20,40))
++        if progres==True:
++            if z <= 10:
++                pourcent = pygame.image.load("design/pourcent10.png")
++                pourcent_crop = pygame.transform.scale(pourcent10, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 20 and z > 10:
++                pourcent = pygame.image.load("design/pourcent20.png")
++                pourcent_crop = pygame.transform.scale(pourcent20, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 30 and z > 20:
++                pourcent = pygame.image.load("design/pourcent30.png")
++                pourcent_crop = pygame.transform.scale(pourcent30, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 40 and z > 30:
++                pourcent = pygame.image.load("design/pourcent40.png")
++                pourcent_crop = pygame.transform.scale(pourcent40, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 50 and z > 40:
++                pourcent = pygame.image.load("design/pourcent50.png")
++                pourcent_crop = pygame.transform.scale(pourcent50, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 60 and z > 50:
++                pourcent = pygame.image.load("design/pourcent60.png")
++                pourcent_crop = pygame.transform.scale(pourcent60, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 70 and z > 60:
++                pourcent = pygame.image.load("design/pourcent70.png")
++                pourcent_crop = pygame.transform.scale(pourcent70, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 80 and z > 70:
++                pourcent = pygame.image.load("design/pourcent80.png")
++                pourcent_crop = pygame.transform.scale(pourcent80, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 90 and z > 80:
++                pourcent = pygame.image.load("design/pourcent90.png")
++                pourcent_crop = pygame.transform.scale(pourcent900, (30, 200))
++                screen.blit(pourcent_crop, (0, 50))
++            elif z <= 100 and z >90:
++                pourcent = pygame.image.load("design/pourcent100.png")
++                pourcent_crop = pygame.transform.scale(pourcent100, (30, 200))
++                screen.blit(pourcent_crop,(0,50))
+         pygame.display.update() #Mise à jour continue du programme
+ 
+ 
+ 
+ pygame.quit()
+ quit()
+-
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.11 (Central_project)\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.11 (Central_project)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 0138351e8535c00b9af46b35b8ec4491116b28d3)
++++ b/.idea/misc.xml	(date 1710506850366)
+@@ -1,7 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="Black">
+-    <option name="sdkName" value="Python 3.11 (Central_project)" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Central_project)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: function.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def open_the_shop(shop): #Fonction pour ouvrir le magasin\r\n    print(\"Bienvenu dans la boutique. Voici les infrastructures disponibles.\")\r\n    for key in shop.keys():\r\n        print(key,\":\",shop[key],\" dollars.\")\r\n\r\ndef see_the_wallet(m): #Fonction pour ouvrir le portemonnaie\r\n    print(\"Vous avez\", m, \"dollars dans votre portemonnaie.\")\r\n\r\ndef buy_in_the_shop(shop, bag, m): #Fonction pour acheter dans le shop\r\n    T = []\r\n    i = 1\r\n    for value in shop: #J'affiche les infrastructures et les nombres à saisir pour les ajouter au sac.\r\n        print(value,\":\" ,i, end=\" ||| \")\r\n        T.append(value) #Je mets les infrastructures dans une liste mais au premier terme plutôt qu'au ième terme.\r\n        i+=1\r\n    x = int(input(\"\\nSaisir l'objet à acheter :\")) #L'utilisateur donne le chiffre associé pour que le programme retrouve l'infrastructure dans la liste.\r\n    if shop[T[x-1]] <= m: #Vérifie que la valeur de l'insfrastructure qui lui est associé dans le dico \"shop\" soit inférieur à la somme dans le portmonnaie.\r\n        bag.append(T[x-1]) #Le terme i = 1 est à la place 0 du tableau, donc pareil pour tous les autres, incrémentation de -1.\r\n    m = m-shop[T[x-1]]\r\n\r\ndef print_bag(bag): #Fonction qui affiche ce qu'il y a dans le sac de l'utilisateur.\r\n    print(\"Vous possédez dans votre sac :\", bag)\r\n\r\ndef gain(P,M,G,I):\r\n    m+=1*P+5*M+15*G+35*I\r\n    return m\r\n\r\ndef production(P,M,G,I):\r\n    Z=P*2+M*5+G*12.5+I*50\r\n    return Z\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/function.py b/function.py
+--- a/function.py	(revision 0138351e8535c00b9af46b35b8ec4491116b28d3)
++++ b/function.py	(date 1710501649339)
+@@ -1,3 +1,14 @@
++print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
++print_background = True #Même chose pour le fond d'écran.
++print_play_button = True #Même chose pour le bouton play
++print_city_map_crop = False #Mêeme chose pour la map de la ville
++print_shop = False
++print_indoor_shop = False
++print_nuclear_central_shop = False
++print_nuclear_central_logo = False
++print_return_button = False
++print_child = False
++
+ def open_the_shop(shop): #Fonction pour ouvrir le magasin
+     print("Bienvenu dans la boutique. Voici les infrastructures disponibles.")
+     for key in shop.keys():
+@@ -28,3 +39,31 @@
+ def production(P,M,G,I):
+     Z=P*2+M*5+G*12.5+I*50
+     return Z
++
++
++def open_town():
++    print_play_button = False
++    print_title = False
++    print_city_map_crop = True
++    print_shop = True
++    print_child = True
++    return print_play_button,print_title,print_city_map_crop,print_shop,print_child
++
++def close_town():
++    print_city_map_crop = False
++    print_shop = False
++    print_child = False
++    return print_city_map_crop,print_shop,print_child
++
++def open_shop():
++    print_indoor_shop = True
++    print_nuclear_central_shop = True
++    print_nuclear_central_logo = True
++    print_return_button = True
++    return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button
++def close_shop():
++    print_indoor_shop = False
++    print_nuclear_central_shop = False
++    print_nuclear_central_logo = False
++    print_return_button = False
++    return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button
+\ No newline at end of file
+diff --git a/jeux b/jeux
+new file mode 100644
