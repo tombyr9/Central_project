@@ -66,3 +66,4 @@ def close_shop():
     print_nuclear_central_logo = False
     print_return_button = False
     return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button
+

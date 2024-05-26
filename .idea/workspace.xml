@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edce05e2-d3c4-49e5-89e0-cf79955592d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/design/city_map.png-autosave.kra" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design/city_map_grey_3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="library" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,19 +43,22 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2cRW3Q0NGM70iKhtSg1yjXsGMgG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.Main.executor": "Run",
     "Python.function.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "library",
+    "git-widget-placeholder": "visuel",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,16 +108,22 @@
       <workItem from="1715432396416" duration="19000" />
       <workItem from="1715432433284" duration="2298000" />
       <workItem from="1715438010247" duration="90000" />
-      <workItem from="1716358489558" duration="6826000" />
+      <workItem from="1716358489558" duration="7377000" />
+      <workItem from="1716382228473" duration="173000" />
+      <workItem from="1716576626395" duration="3033000" />
+      <workItem from="1716753887595" duration="5572000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Central_project$function.coverage" NAME="function Coverage Results" MODIFIED="1709309072408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Central_project$main.coverage" NAME="main Coverage Results" MODIFIED="1716365488288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Central_project$main.coverage" NAME="main Coverage Results" MODIFIED="1716759489635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Central_project$Main.coverage" NAME="Main Coverage Results" MODIFIED="1708074758671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
