@@ -39,8 +39,8 @@ class text:
 thief = character()
 text = text()
 #Génère les images utiles au jeu vidéo de Tom, mini_game_thief
-thief_image_0 = pygame.image.load(".venv/art/character_0.png")
-thief_image_1 = pygame.image.load(".venv/art/character_1.png")
+thief_image_0 = pygame.image.load("design/character_0.png")
+thief_image_1 = pygame.image.load("design/character_1.png")
 #Une liste qui sert à l'animation du personnage du jeu de Tom, mini_game_thied
 thief_frames = [thief_image_0, thief_image_1]
 #Un index qui sert à l'animation du personnage du jeu de Tom, mini_game_thied
