@@ -22,7 +22,7 @@ villecharbon = pygame.image.load("design/villecharbon.png")
 villecharbon = pygame.transform.scale(villecharbon, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
 # Définition des paramètres des carrés
-S   QUARE_SIZE = 50
+QUARE_SIZE = 50
 
 # Position du score
 SCORE_POSITION = (WINDOW_WIDTH - 150, 20)
