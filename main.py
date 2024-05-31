@@ -4,6 +4,7 @@ import sys
 import os
 from function import *
 from jeux1bis import *
+from quizz import *
 
 m = 1000000
 bag = []
@@ -192,6 +193,7 @@ print_nuclear_central_logo = False
 print_return_button = False
 print_child = False
 mini_game_thief = False
+mini_game_quizz =False
 print_library = False
 print_chapitre1 = False
 print_chapitre2grey = False
@@ -262,6 +264,18 @@ while run: #Tant que le programme est en cours
                 print_chapitre4grey = False
                 print_chapitre5grey = False
                 aim_lab_charbon=True
+
+            if chapitre3grey_crop_rect.collidepoint(event.pos) and (print_library==True): #lilia
+                print_library = False
+                print_chapitre1 = False
+                mini_game_thief = False
+                print_return_button = False
+                print_chapitre2grey = False
+                print_chapitre3grey = False
+                print_chapitre4grey = False
+                print_chapitre5grey = False
+                mini_game_quizz= True
+
 
             if return_button_crop_rect.collidepoint(event.pos) and (print_library == True) and (mini_game_thief==False): #Si je suis dans la librairie et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
                 print_library = False
@@ -407,7 +421,58 @@ while run: #Tant que le programme est en cours
 
 
             # Rafraîchir l'affichage
+        print(mini_game_quizz)
 
+        if mini_game_quizz == True:
+            print_child = False
+            print_shop = False
+            print_background = False
+            print_city_map_crop = False
+
+            show_start_screen()
+            start_button = pygame.Rect(WIDTH // 2 - 50, HEIGHT // 2 + 50, 100, 50)
+
+            current_question=0
+            score=0
+            while True:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_pos = pygame.mouse.get_pos()
+                        if start_button.collidepoint(mouse_pos):
+                            while current_question < len(questions):
+                                buttons = show_question(current_question)
+                                pygame.display.flip()
+                                waiting = True
+                                while waiting:
+                                    for event in pygame.event.get():
+                                        if event.type == pygame.QUIT:
+                                            pygame.quit()
+                                            sys.exit()
+                                        elif event.type == pygame.MOUSEBUTTONDOWN:
+                                            mouse_pos = pygame.mouse.get_pos()
+                                            for i, button in enumerate(buttons):
+                                                if button.collidepoint(mouse_pos):
+                                                    waiting = False
+                                                    if i == correct_choices[current_question]:
+                                                        score += 1
+                                                    current_question += 1
+                                                    break
+                            screen.blit(background, (0, 0))
+                            draw_text("Votre score est : " + str(score) + "/" + str(len(questions)), font, BLACK,
+                                      screen,
+                                      WIDTH // 2, HEIGHT // 2)
+                            pygame.display.flip()
+                            pygame.time.wait(5000)
+                            pygame.quit()
+                            sys.exit()
+
+                pygame.draw.rect(screen, BLACK, start_button)
+                draw_text("Start", font, WHITE, screen, start_button.centerx, start_button.centery)
+
+                pygame.display.flip()
 
 # Remplir l'écran avec la couleur blanche
 
