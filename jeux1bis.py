@@ -5,7 +5,7 @@ import sys
 def run_game():
     global resultat
     pygame.init()
-    compteur = 60000
+    compteur = 30000
 
     # Définition de la taille de la fenêtre
     WINDOW_WIDTH = 800
@@ -31,10 +31,10 @@ def run_game():
     SCORE_FONT = pygame.font.Font(None, 36)
 
     # Durée de vie des carrés (en millisecondes)
-    SQUARE_DURATION = 5000  # 5 secondes
+    SQUARE_DURATION = 3750  # 3.75 secondes
 
     # Temps entre chaque apparition de carré (en millisecondes)
-    SQUARE_APPEAR_INTERVAL = 1000  # 1 seconde
+    SQUARE_APPEAR_INTERVAL = 550  # 0.55seconde
 
     # Chargement de l'image de "coal"
     coal = pygame.image.load("design/coal.png")
@@ -110,15 +110,16 @@ def run_game():
 
         # appeler la fonction display_image_for_duration
         if score == 30:
-            display_image_for_duration(villepropre, 10000)
+            display_image_for_duration(villepropre, 600)
             resultat = True
-            pygame.quit()
-            return True
+            print("je renvoie resultat")
+            return resultat
+
 
         elif compteur <= 0:
-            display_image_for_duration(villecharbon, 10000)
-            pygame.quit()
-            return False
+            display_image_for_duration(villecharbon, 600)
+            resultat = False
+            return resultat
 
         # Décrémentation du compteur de temps
         compteur -= 30  # Décrémenter de 30 millisecondes (équivalent à 30 FPS)
@@ -127,7 +128,6 @@ def run_game():
         pygame.display.flip()
         clock.tick(30)
 
-    pygame.quit()
-    return False
+
 
 # Exécution de la fonction de jeu
