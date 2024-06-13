@@ -341,11 +341,15 @@ while run: #Tant que le programme est en cours
         pygame.display.update() #Mise à jour
         # continue du programme
         if aim_lab_charbon==True:
-            print_child = False
-            print_shop = False
-            print_background = False
-            print_city_map_crop = False
-            resultat=run_game()
+            resultat == False
+            while resultat==False:
+                print_child = False
+                print_shop = False
+                print_background = False
+                print_city_map_crop = False
+                resultat=run_game()
+
+            print(resultat)
             if resultat == True:
                 print("jeu fini")
                 victoire=2
