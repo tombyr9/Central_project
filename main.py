@@ -217,6 +217,8 @@ print_chapitre4grey = False
 print_chapitre5grey = False
 aim_lab_charbon=False
 resultat=False
+compt = 0
+verif_mini_quizz = True
 police = pygame.font.SysFont(None, 48)
 
 
@@ -357,6 +359,14 @@ while run: #Tant que le programme est en cours
                     city_map = pygame.image.load("design/city_map_grey1.png")  # On initialise une variable avec l'image de la ville.
                     city_map_crop = pygame.transform.scale(city_map, crop)
                     print_win_text = False
+        if victoire == 2:
+            city_map = pygame.image.load("design/city_map_grey2.png")
+            city_map_crop = pygame.transform.scale(city_map, crop)    # On initialise une variable avec l'image de la ville.
+            jouer_musique("design/son 8bit.mp3", 0.2)
+        if victoire == 3:
+            city_map = pygame.image.load("design/city_map_grey3.png")  # On initialise une variable avec l'image de la ville.
+            city_map_crop = pygame.transform.scale(city_map, crop)
+            jouer_musique("design/son 8bit.mp3", 0.2)
         pygame.display.update() #Mise à jour
         # continue du programme
         if aim_lab_charbon==True:
@@ -372,6 +382,7 @@ while run: #Tant que le programme est en cours
                 print_city_map_crop = False
                 jouer_musique("design/son jeu 2.mp3", 0.7)
                 resultat=run_game()
+                victoire = 2
 
             print(resultat)
             if resultat == True:
@@ -473,7 +484,7 @@ while run: #Tant que le programme est en cours
             current_question=0
             score=0
             jouer_musique("design/son jeu 3.mp3", 0.2)
-            while True:
+            while verif_mini_quizz:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
@@ -504,9 +515,13 @@ while run: #Tant que le programme est en cours
                                       screen,
                                       WIDTH // 2, HEIGHT // 2)
                             pygame.display.flip()
-                            pygame.time.wait(5000)
-                            pygame.quit()
-                            sys.exit()
+                            pygame.time.wait(2000)
+                            if score > 5:
+                                hub = open_town()  # J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
+                                print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
+                                verif_mini_quizz = False
+                                mini_game_quizz = False
+                                victoire = 3
 
                 pygame.draw.rect(screen, BLACK, start_button)
                 draw_text("Start", font, WHITE, screen, start_button.centerx, start_button.centery)
