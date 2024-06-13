@@ -347,11 +347,15 @@ while run: #Tant que le programme est en cours
             print_city_map_crop = False
             resultat=run_game()
             if resultat == True:
+                print("jeu fini")
                 victoire=2
-                aim_lab_charbon==False
+                aim_lab_charbon=False
+                screen = pygame.display.set_mode((640, 455))
                 hub = open_town()
+                print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
             else:
                 hub = open_town()
+                print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
                 break
 
         if mini_game_thief == True:
