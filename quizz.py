@@ -9,18 +9,18 @@ WIDTH = 640
 HEIGHT = 455
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-FONT_SIZE = 26
+FONT_SIZE = 30
 
 # Définition des questions et réponses
 questions = [
-    "Comment appelle-t-on le gaz responsable du réchauffement climatique ?",
-    "Comment s’appelle les scientifique qui étudient le climat ?",
-    "Quelle est la principale cause de pollution de la terre ?",
-    "Quel est l'effet de l'utilisation du charbon sur l'air ?",
+    "Quel est le gaz responsable du réchauffement climatique ?",
+    "Qui sont les scientifique qui étudient le climat ?",
+    "Quelle est la principale cause de pollution ?",
+    "Quel est l'effet du charbon sur l'air ?",
     "Quel impact a l'exploitation minière du charbon ?",
-    "Pourquoi le charbon est une source d'énergie non renouvelable ? Car",
-    "Quel effet a le charbon sur le changement climatique ?",
-    "Pourquoi l'énergie nucléaire est-elle une source d'énergie propre ? Car"
+    "Pourquoi le charbon est dit non renouvelable ? Car",
+    "Quel effet a le charbon ?",
+    "Pourquoi l'énergie nucléaire est dites d'énergie propre ? Car"
 ]
 
 answers = [
@@ -54,7 +54,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Quiz sur l'environnement")
 
 # Chargement de l'image de fond
-background = pygame.image.load("im.jpeg")
+background = pygame.image.load("design/pixel.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
 # Initialisation de la police
