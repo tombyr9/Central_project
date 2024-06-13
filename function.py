@@ -1,3 +1,4 @@
+import pygame
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
 print_background = True #Même chose pour le fond d'écran.
 print_play_button = True #Même chose pour le bouton play
