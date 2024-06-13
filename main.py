@@ -186,6 +186,15 @@ chapitre5grey_crop = pygame.transform.scale(chapitre5grey, (180,105))
 chapitre5grey_crop_rect = chapitre5grey_crop.get_rect()
 chapitre5grey_crop_rect = chapitre5grey_crop_rect.move((240,340))
 
+story2 = pygame.image.load("design/story2.png")
+story2 = pygame.transform.scale(story2, (650,475))
+
+story3 = pygame.image.load("design/story3.jpg")
+story3 = pygame.transform.scale(story3, (650,475))
+
+story4 = pygame.image.load("design/story4.jpg")
+story4 = pygame.transform.scale(story4, (650,475))
+
 victoire = 0
 cpt = 0
 print_title = True #On initialise une booléenne. Lorsqu'elle sera fausse, on cessera d'afficher le titre.
@@ -351,12 +360,17 @@ while run: #Tant que le programme est en cours
         pygame.display.update() #Mise à jour
         # continue du programme
         if aim_lab_charbon==True:
+            if compt == 1:
+                jouer_replique("design/story3_audio.mp3",0.5)
+                display_image_for_duration(screen,story3,21000)
+                compt+=1
             resultat == False
             while resultat==False:
                 print_child = False
                 print_shop = False
                 print_background = False
                 print_city_map_crop = False
+                jouer_musique("design/son jeu 2.mp3", 0.7)
                 resultat=run_game()
 
             print(resultat)
@@ -373,6 +387,12 @@ while run: #Tant que le programme est en cours
                 break
 
         if mini_game_thief == True:
+            print(cpt)
+            if compt == 0:
+                jouer_replique("design/story2_audio.mp3",0.5)
+                display_image_for_duration(screen,story2,19000)
+                compt+=1
+            print(cpt)
             print_child = False
             print_shop = False
             print_background = False
@@ -384,6 +404,7 @@ while run: #Tant que le programme est en cours
             if (index >= 2):
                 index = 0
             if before_start == True:
+                jouer_musique("design/son jeu 1.mp3", 0.7)
                 touch = False
                 screen.blit(texte_before_game_1, (100, 90))
                 screen.blit(texte_before_game_2, (110, 150))
@@ -436,11 +457,11 @@ while run: #Tant que le programme est en cours
                 hub = open_town()  # J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
                 print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
 
-
-            # Rafraîchir l'affichage
-        print(mini_game_quizz)
-
         if mini_game_quizz == True:
+            if compt == 2:
+                jouer_replique("design/story4_audio.mp3",0.5)
+                display_image_for_duration(screen,story4,16000)
+                compt+=1
             print_child = False
             print_shop = False
             print_background = False
@@ -451,6 +472,7 @@ while run: #Tant que le programme est en cours
 
             current_question=0
             score=0
+            jouer_musique("design/son jeu 3.mp3", 0.2)
             while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
