@@ -11,6 +11,12 @@ bag = []
 shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "magasin_de_fleurs": 200000, "caserne_douvriers": 3000, "petite_centrale" : 8000}
 
 open
+
+pygame.init() #Initialisation de la séance d'affichage
+pygame.mixer.init()
+
+jouer_musique("design/son 8bit.mp3",0.2)
+
 pygame.init() #Initialisation de la séance d'affichage
 
 # Définition de la couleur blanche
@@ -229,13 +235,14 @@ while run: #Tant que le programme est en cours
                 print_city_map_crop, print_shop, print_child = hub
                 shop = open_shop()#J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire à la boutique
                 print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = shop#Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "shop".
-
+                jouer_musique("design/son shop.mp3", 0.2)
+                
             if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True) and (mini_game_thief==False): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
                 hub = close_shop()
                 print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = hub
                 hub = open_town()
                 print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub
-
+                jouer_musique("design/son 8bit.mp3", 0.2)
             if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
                 print_library = True
                 print_return_button = True
@@ -244,7 +251,7 @@ while run: #Tant que le programme est en cours
                 print_chapitre3grey = True
                 print_chapitre4grey = True
                 print_chapitre5grey = True
-
+                jouer_musique("design/son librairie.mp3", 0.2)
             if chapitre1_crop_rect.collidepoint(event.pos) and (print_library == True):
                 print_library = False
                 print_chapitre1= False
@@ -254,6 +261,8 @@ while run: #Tant que le programme est en cours
                 print_chapitre3grey = False
                 print_chapitre4grey = False
                 print_chapitre5grey = False
+                jouer_musique("design/son jeu 1.mp3", 0.7)
+                
             if chapitre2grey_crop_rect.collidepoint(event.pos) and (print_library == True):
                 print_library = False
                 print_chapitre1= False
@@ -264,7 +273,7 @@ while run: #Tant que le programme est en cours
                 print_chapitre4grey = False
                 print_chapitre5grey = False
                 aim_lab_charbon=True
-
+                jouer_musique("design/son jeu 2.mp3", 0.7)
             if chapitre3grey_crop_rect.collidepoint(event.pos) and (print_library==True): #lilia
                 print_library = False
                 print_chapitre1 = False
@@ -275,7 +284,7 @@ while run: #Tant que le programme est en cours
                 print_chapitre4grey = False
                 print_chapitre5grey = False
                 mini_game_quizz= True
-
+                jouer_musique("design/son jeu 3.mp3", 0.2)
 
             if return_button_crop_rect.collidepoint(event.pos) and (print_library == True) and (mini_game_thief==False): #Si je suis dans la librairie et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
                 print_library = False
@@ -285,7 +294,7 @@ while run: #Tant que le programme est en cours
                 print_chapitre3grey = False
                 print_chapitre4grey = False
                 print_chapitre5grey = False
-
+                jouer_musique("design/son 8bit.mp3", 0.2)
 
 
 
@@ -331,6 +340,7 @@ while run: #Tant que le programme est en cours
             screen.blit(return_button_crop, (20, 350))
         if victoire == 1:
             if print_win_text == True:
+                jouer_musique("design/son 8bit.mp3", 0.2)
                 screen.blit(texte_win, (45,180))
                 screen.blit(text_discover_map,(85,230))
             if event.type == pygame.MOUSEBUTTONDOWN:
