@@ -340,7 +340,6 @@ while run: #Tant que le programme est en cours
                     print_win_text = False
         pygame.display.update() #Mise à jour
         # continue du programme
-        print(mini_game_thief)
         if aim_lab_charbon==True:
             print_child = False
             print_shop = False
