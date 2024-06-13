@@ -15,11 +15,11 @@ def run_game():
     BACKGROUND_COLOR = (255, 255, 255)  # Blanc
 
     # Chargement de l'image de fond
-    background = pygame.image.load("design/plant.png")
+    background = pygame.image.load("design/plant.jpeg")
     background = pygame.transform.scale(background, (WINDOW_WIDTH, WINDOW_HEIGHT))
-    villepropre = pygame.image.load("design/villepropre.png")
+    villepropre = pygame.image.load("design/villepropre.jpg")
     villepropre = pygame.transform.scale(villepropre, (WINDOW_WIDTH, WINDOW_HEIGHT))
-    villecharbon = pygame.image.load("design/villecharbon.png")
+    villecharbon = pygame.image.load("design/villecharbon.jpg")
     villecharbon = pygame.transform.scale(villecharbon, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # Définition des paramètres des carrés
