@@ -78,3 +78,12 @@ def jouer_musique(fichier_musique, volume=1.0):
     # Jouer la nouvelle musique
     pygame.mixer.music.play(-1)
 
+def jouer_replique(fichier_musique, volume=1.0):
+    # Arrêter la musique actuelle
+    pygame.mixer.music.stop()
+    # Charger la nouvelle musique
+    pygame.mixer.music.load(fichier_musique)
+    # Définir le volume
+    pygame.mixer.music.set_volume(volume)
+    # Jouer la nouvelle musique
+    pygame.mixer.music.play(0)
