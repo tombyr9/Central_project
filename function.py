@@ -67,3 +67,13 @@ def close_shop():
     print_return_button = False
     return print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button
 
+def jouer_musique(fichier_musique, volume=1.0):
+    # Arrêter la musique actuelle
+    pygame.mixer.music.stop()
+    # Charger la nouvelle musique
+    pygame.mixer.music.load(fichier_musique)
+    # Définir le volume
+    pygame.mixer.music.set_volume(volume)
+    # Jouer la nouvelle musique
+    pygame.mixer.music.play(-1)
+
