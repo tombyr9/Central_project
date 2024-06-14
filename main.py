@@ -5,7 +5,7 @@ import os
 from function import *
 from jeux1bis import *
 from quizz import *
-
+from jeux2 import *
 m = 1000000
 bag = []
 shop = {"parc_dattraction" : 1000000, "aire_de_jeu" : 10000, "statue" : 1500, "magasin_de_fleurs": 200000, "caserne_douvriers": 3000, "petite_centrale" : 8000}
@@ -81,7 +81,7 @@ play_button = pygame.image.load("design/play_button.png") #On initialise une var
 play_button_crop = pygame.transform.scale(play_button, (150,75)) #On rogne la taille de cette image du bouton.
 
 # Création d'une surface de texte
-texte_before_game_1 = font.render("Le voleur est sur le point de s'échapper !", True, noir)
+texte_before_game_1 = font.render("L'agent est sur le point de s'échapper !", True, noir)
 texte_before_game_2 = font.render("Clique dessus avant qu'il ne s'enfuit.", True, noir)
 texte_before_game_3 = font.render("Prêt ?", True, noir)
 texte_restart = font.render("On recommence ?", True, noir)
@@ -161,39 +161,45 @@ chapitre1_crop = pygame.transform.scale(chapitre1, (180,105))
 chapitre1_crop_rect = chapitre1_crop.get_rect()
 chapitre1_crop_rect = chapitre1_crop_rect.move((240, 20))
 
-chapitre2 = pygame.image.load("design/chapitre1.png")
-chapitre2_crop = pygame.transform.scale(chapitre1, (180,105))
-chapitre2_crop_rect = chapitre1_crop.get_rect()
-chapitre2_crop_rect = chapitre1_crop_rect.move((240, 20))
+chapitre1grey = pygame.image.load("design/chapitre1-grey.png")
+chapitre1grey_crop = pygame.transform.scale(chapitre1grey, (180,105))
+chapitre1grey_crop_rect = chapitre1grey_crop.get_rect()
+chapitre1grey_crop_rect = chapitre1grey_crop_rect.move((240,100))
 
 chapitre2grey = pygame.image.load("design/chapitre2-grey.png")
 chapitre2grey_crop = pygame.transform.scale(chapitre2grey, (180,105))
 chapitre2grey_crop_rect = chapitre2grey_crop.get_rect()
-chapitre2grey_crop_rect = chapitre2grey_crop_rect.move((240,100))
+chapitre2grey_crop_rect = chapitre2grey_crop_rect.move((240, 20))
+
+chapitre2 = pygame.image.load("design/chapitre2.png")
+chapitre2_crop = pygame.transform.scale(chapitre2, (180,105))
+chapitre2_crop_rect = chapitre2_crop.get_rect()
+chapitre2_crop_rect = chapitre2_crop_rect.move((240,100))
 
 chapitre3grey = pygame.image.load("design/chapitre3-grey.png")
 chapitre3grey_crop = pygame.transform.scale(chapitre3grey, (180,105))
 chapitre3grey_crop_rect = chapitre3grey_crop.get_rect()
 chapitre3grey_crop_rect = chapitre3grey_crop_rect.move((240, 180))
 
+chapitre3 = pygame.image.load("design/chapitre3.png")
+chapitre3_crop = pygame.transform.scale(chapitre3, (180,105))
+chapitre3_crop_rect = chapitre3_crop.get_rect()
+chapitre3_crop_rect = chapitre3_crop_rect.move((240, 180))
+
 chapitre4grey = pygame.image.load("design/chapitre4-grey.png")
 chapitre4grey_crop = pygame.transform.scale(chapitre4grey, (180,105))
 chapitre4grey_crop_rect = chapitre4grey_crop.get_rect()
 chapitre4grey_crop_rect = chapitre4grey_crop_rect.move((240,260))
 
+chapitre4 = pygame.image.load("design/chapitre4.png")
+chapitre4_crop = pygame.transform.scale(chapitre4, (180,105))
+chapitre4_crop_rect = chapitre4_crop.get_rect()
+chapitre4_crop_rect = chapitre4_crop_rect.move((240, 180))
+
 chapitre5grey = pygame.image.load("design/chapitre5-grey.png")
 chapitre5grey_crop = pygame.transform.scale(chapitre5grey, (180,105))
 chapitre5grey_crop_rect = chapitre5grey_crop.get_rect()
 chapitre5grey_crop_rect = chapitre5grey_crop_rect.move((240,340))
-
-story2 = pygame.image.load("design/story2.png")
-story2 = pygame.transform.scale(story2, (650,475))
-
-story3 = pygame.image.load("design/story3.jpg")
-story3 = pygame.transform.scale(story3, (650,475))
-
-story4 = pygame.image.load("design/story4.jpg")
-story4 = pygame.transform.scale(story4, (650,475))
 
 victoire = 0
 cpt = 0
@@ -211,14 +217,18 @@ mini_game_thief = False
 mini_game_quizz =False
 print_library = False
 print_chapitre1 = False
+print_chapitre1grey=False
 print_chapitre2grey = False
+print_chapitre2=False
 print_chapitre3grey = False
+print_chapitre3=False
 print_chapitre4grey = False
+print_chapitre4=False
 print_chapitre5grey = False
 aim_lab_charbon=False
 resultat=False
-compt = 0
-verif_mini_quizz = True
+resultat2=False
+jeux2=False
 police = pygame.font.SysFont(None, 48)
 
 
@@ -247,22 +257,57 @@ while run: #Tant que le programme est en cours
                 shop = open_shop()#J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire à la boutique
                 print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = shop#Je mets à jours les 5 variables, en leur donnant leur nouvelle valeur "true" ou "false" qui sont comprise dans "shop".
                 jouer_musique("design/son shop.mp3", 0.2)
-                
+
             if return_button_crop_rect.collidepoint(event.pos) and (print_indoor_shop == True) and (mini_game_thief==False): #Si je suis dans le shop et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
                 hub = close_shop()
                 print_indoor_shop, print_nuclear_central_shop, print_nuclear_central_logo, print_return_button = hub
                 hub = open_town()
                 print_play_button,print_title,print_city_map_crop,print_shop,print_child = hub
                 jouer_musique("design/son 8bit.mp3", 0.2)
-            if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
-                print_library = True
-                print_return_button = True
-                print_chapitre1 = True
-                print_chapitre2grey = True
-                print_chapitre3grey = True
-                print_chapitre4grey = True
-                print_chapitre5grey = True
-                jouer_musique("design/son librairie.mp3", 0.2)
+            if victoire==0:
+                if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
+                    print_library = True
+                    print_return_button = True
+                    print_chapitre1 = True
+                    print_chapitre2grey = True
+                    print_chapitre2=False
+                    print_chapitre3grey = True
+                    print_chapitre4grey = True
+                    jouer_musique("design/son librairie.mp3", 0.2)
+            if victoire == 1:
+                if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
+                    print_library = True
+                    print_return_button = True
+                    print_chapitre1 = False
+                    print_chapitre1grey=True
+                    print_chapitre2grey = False
+                    print_chapitre2=True
+                    print_chapitre3grey = True
+                    print_chapitre4grey = True
+                    jouer_musique("design/son librairie.mp3", 0.2)
+            if victoire == 2:
+                if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
+                    print_library = True
+                    print_return_button = True
+                    print_chapitre1grey = True
+                    print_chapitre2grey = True
+                    print_chapitre2=False
+                    print_chapitre3 = True
+                    print_chapitre3grey=False
+                    print_chapitre4grey = True
+                    jouer_musique("design/son librairie.mp3", 0.2)
+            if victoire == 3:
+                if child_crop_rect.collidepoint(event.pos) and (print_city_map_crop == True):
+                    print_library = True
+                    print_return_button = True
+                    print_chapitre1 = False
+                    print_chapitre1grey=True
+                    print_chapitre2grey = True
+                    print_chapitre3grey = True
+                    print_chapitre3=False
+                    print_chapitre4grey = False
+                    print_chapitre4=True
+                    jouer_musique("design/son librairie.mp3", 0.2)
             if chapitre1_crop_rect.collidepoint(event.pos) and (print_library == True):
                 print_library = False
                 print_chapitre1= False
@@ -273,8 +318,19 @@ while run: #Tant que le programme est en cours
                 print_chapitre4grey = False
                 print_chapitre5grey = False
                 jouer_musique("design/son jeu 1.mp3", 0.7)
-                
-            if chapitre2grey_crop_rect.collidepoint(event.pos) and (print_library == True):
+
+            if chapitre2_crop_rect.collidepoint(event.pos) and (print_library == True):
+                print_library = False
+                print_chapitre1= False
+                mini_game_thief = False
+                print_return_button = False
+                print_chapitre2grey = False
+                print_chapitre3grey = False
+                print_chapitre4grey = False
+                print_chapitre5grey = False
+                jeux2=True
+                jouer_musique("design/son jeu 2.mp3", 0.7)
+            if chapitre3_crop_rect.collidepoint(event.pos) and (print_library == True):
                 print_library = False
                 print_chapitre1= False
                 mini_game_thief = False
@@ -284,8 +340,7 @@ while run: #Tant que le programme est en cours
                 print_chapitre4grey = False
                 print_chapitre5grey = False
                 aim_lab_charbon=True
-                jouer_musique("design/son jeu 2.mp3", 0.7)
-            if chapitre3grey_crop_rect.collidepoint(event.pos) and (print_library==True): #lilia
+            if chapitre4grey_crop_rect.collidepoint(event.pos) and (print_library==True): #lilia
                 print_library = False
                 print_chapitre1 = False
                 mini_game_thief = False
@@ -300,10 +355,14 @@ while run: #Tant que le programme est en cours
             if return_button_crop_rect.collidepoint(event.pos) and (print_library == True) and (mini_game_thief==False): #Si je suis dans la librairie et que je clique sur le bouton return alors je reviens à l'affichage de la ville.
                 print_library = False
                 print_chapitre1 = False
+                print_chapitre1grey=False
                 print_return_button = False
                 print_chapitre2grey = False
+                print_chapitre2=False
                 print_chapitre3grey = False
+                print_chapitre3=False
                 print_chapitre4grey = False
+                print_chapitre4=False
                 print_chapitre5grey = False
                 jouer_musique("design/son 8bit.mp3", 0.2)
 
@@ -339,10 +398,18 @@ while run: #Tant que le programme est en cours
             screen.blit(library_crop,(0,0))
         if print_chapitre1 == True:
             screen.blit(chapitre1_crop, (240, 20))
+        if print_chapitre1grey==True:
+            screen.blit(chapitre1grey_crop, (240, 20))
+        if print_chapitre2 == True:
+            screen.blit(chapitre2_crop, (240, 100))
         if print_chapitre2grey == True:
             screen.blit(chapitre2grey_crop, (240, 100))
+        if print_chapitre3 == True:
+            screen.blit(chapitre3_crop, (240, 180))
         if print_chapitre3grey == True:
             screen.blit(chapitre3grey_crop, (240, 180))
+        if print_chapitre4 == True:
+            screen.blit(chapitre4_crop, (240, 260))
         if print_chapitre4grey == True:
             screen.blit(chapitre4grey_crop, (240, 260))
         if print_chapitre5grey == True:
@@ -351,44 +418,64 @@ while run: #Tant que le programme est en cours
             screen.blit(return_button_crop, (20, 350))
         if victoire == 1:
             if print_win_text == True:
-                jouer_musique("design/son 8bit.mp3", 0.2)
                 screen.blit(texte_win, (45,180))
                 screen.blit(text_discover_map,(85,230))
+                jouer_musique("design/son 8bit.mp3", 0.2)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if texte_win_rect.collidepoint(event.pos):
                     city_map = pygame.image.load("design/city_map_grey1.png")  # On initialise une variable avec l'image de la ville.
                     city_map_crop = pygame.transform.scale(city_map, crop)
                     print_win_text = False
-        if victoire == 2:
+        elif victoire==2:
             city_map = pygame.image.load("design/city_map_grey2.png")
-            city_map_crop = pygame.transform.scale(city_map, crop)    # On initialise une variable avec l'image de la ville.
-            jouer_musique("design/son 8bit.mp3", 0.2)
-        if victoire == 3:
-            city_map = pygame.image.load("design/city_map_grey3.png")  # On initialise une variable avec l'image de la ville.
             city_map_crop = pygame.transform.scale(city_map, crop)
             jouer_musique("design/son 8bit.mp3", 0.2)
+        elif victoire==3:
+            city_map = pygame.image.load("design/city_map_grey4.png")
+            city_map_crop = pygame.transform.scale(city_map, crop)
+            jouer_musique("design/son 8bit.mp3", 0.2)
+
         pygame.display.update() #Mise à jour
         # continue du programme
-        if aim_lab_charbon==True:
-            if compt == 1:
-                jouer_replique("design/story3_audio.mp3",0.5)
-                display_image_for_duration(screen,story3,21000)
-                compt+=1
-            resultat == False
-            while resultat==False:
+        if jeux2==True:
+            while resultat2==False:
                 print_child = False
                 print_shop = False
                 print_background = False
                 print_city_map_crop = False
                 jouer_musique("design/son jeu 2.mp3", 0.7)
+                resultat2=run_jeux2()
+                if resultat2 == True:
+                    print("jeu fini")
+                    victoire=2
+                    jeux2==False
+                    print_chapitre1grey=False
+                    print_chapitre2=False
+                    print_chapitre3=False
+                    print_chapitre4=False
+                    screen = pygame.display.set_mode((640, 455))
+                    hub = open_town()
+                    print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
+                else:
+                    hub = open_town()
+                    print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
+                    break
+        if aim_lab_charbon==True:
+            while resultat==False:
+                print_child = False
+                print_shop = False
+                print_background = False
+                print_city_map_crop = False
                 resultat=run_game()
-                victoire = 2
 
             print(resultat)
             if resultat == True:
-                print("jeu fini")
-                victoire=2
+                victoire=3
                 aim_lab_charbon=False
+                print_chapitre1grey = False
+                print_chapitre2 = False
+                print_chapitre3 = False
+                print_chapitre4 = False
                 screen = pygame.display.set_mode((640, 455))
                 hub = open_town()
                 print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
@@ -398,12 +485,6 @@ while run: #Tant que le programme est en cours
                 break
 
         if mini_game_thief == True:
-            print(cpt)
-            if compt == 0:
-                jouer_replique("design/story2_audio.mp3",0.5)
-                display_image_for_duration(screen,story2,19000)
-                compt+=1
-            print(cpt)
             print_child = False
             print_shop = False
             print_background = False
@@ -415,8 +496,9 @@ while run: #Tant que le programme est en cours
             if (index >= 2):
                 index = 0
             if before_start == True:
-                jouer_musique("design/son jeu 1.mp3", 0.7)
                 touch = False
+                jouer_replique("design/story2_audio.mp3",0.5)
+                display_image_for_duration(screen,story2,19000)
                 screen.blit(texte_before_game_1, (100, 90))
                 screen.blit(texte_before_game_2, (110, 150))
                 screen.blit(texte_before_game_3, (200, 360))
@@ -468,11 +550,11 @@ while run: #Tant que le programme est en cours
                 hub = open_town()  # J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
                 print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
 
+
+            # Rafraîchir l'affichage
+        print(mini_game_quizz)
+
         if mini_game_quizz == True:
-            if compt == 2:
-                jouer_replique("design/story4_audio.mp3",0.5)
-                display_image_for_duration(screen,story4,16000)
-                compt+=1
             print_child = False
             print_shop = False
             print_background = False
@@ -483,8 +565,7 @@ while run: #Tant que le programme est en cours
 
             current_question=0
             score=0
-            jouer_musique("design/son jeu 3.mp3", 0.2)
-            while verif_mini_quizz:
+            while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
@@ -515,13 +596,9 @@ while run: #Tant que le programme est en cours
                                       screen,
                                       WIDTH // 2, HEIGHT // 2)
                             pygame.display.flip()
-                            pygame.time.wait(2000)
-                            if score > 5:
-                                hub = open_town()  # J'associe à une variable, les 5 qui sont retournées par la fonction "open town()", qui affiche uniquement les images qui sont nécessaire au menu de la ville : donc les images du shop, du fond d'écran et de l'enfant.
-                                print_play_button, print_title, print_city_map_crop, print_shop, print_child = hub
-                                verif_mini_quizz = False
-                                mini_game_quizz = False
-                                victoire = 3
+                            pygame.time.wait(5000)
+                            pygame.quit()
+                            sys.exit()
 
                 pygame.draw.rect(screen, BLACK, start_button)
                 draw_text("Start", font, WHITE, screen, start_button.centerx, start_button.centery)
